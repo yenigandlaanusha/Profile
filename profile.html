@@ -1,0 +1,1050 @@
+
+<!DOCTYPE html>
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+<head>
+<style>
+
+#dob > span:hover{cursor: pointer;}
+#datepicker > span:hover{cursor: pointer;}
+.add-on{
+    float:right;
+   
+}
+.homecd{
+    display:none;
+}
+.home_cd{
+    padding-left:10px;
+}
+.card1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width:100%;
+  height:100%;
+  margin:auto;
+  text-align: center;
+  font-family:test;
+  padding:15px;
+  border-radius:4px;
+
+}
+.form-group
+{
+  opacity:75%;
+}
+#files {
+   
+    min-height: 168px;
+}
+@media (min-width: 768px) {
+  #files {
+    min-height: 0;
+  }
+}
+#debug {
+ 
+  height: 180px;  
+}
+
+.dm-uploader {
+   border: 0.2rem dashed #fbece7;
+  text-align: center;
+}
+.dm-uploader.active {
+  border-color: red;
+
+  border-style: solid;
+}
+.dm-uploader {
+  cursor: default;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.dm-uploader .btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.dm-uploader .btn input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  border: solid transparent;
+  width: 100%;
+  opacity: .0;
+  filter: alpha(opacity= 0);
+  cursor: pointer;
+}
+.buttons {
+  clear: both;
+  margin-top: 10px;
+}
+.swap_from_to{
+    cursor: pointer;
+}
+.swap_from_to1{
+    cursor: pointer;
+}
+.swap_bus_from_to{
+    cursor: pointer;
+}
+.swap_bus_from_to1{
+    cursor: pointer;
+}
+.swap_from_to_train{
+    cursor: pointer;
+}
+.swap_from_to_train1{
+    cursor: pointer;
+}
+.swal2-modal .swal2-styled {
+    padding: 10px 15px !important;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+.well:nth-child(3) {
+    margin-left: 2%;
+}
+
+.well h3 {
+    margin-top: 0px;
+}
+
+.single-option {
+    width: 56% !important;
+    margin-left: 23% !important;
+}
+
+.dropdown-menu {
+    min-width: 1px !important;
+}
+
+.radio {
+    color: #999;
+    font-size: 15px;
+    position: relative;
+}
+
+.radio span {
+    position: relative;
+    padding-left: 20px;
+}
+
+.radio span:after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border: 3px solid;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    border-radius: 100%;
+    -ms-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.radio input[type="radio"] {
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+}
+
+.radio input[type="radio"]:checked + span {
+    color: #0B8;
+}
+
+.radio input[type="radio"]:checked + span:before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background: #0B8;
+    left: 5px;
+    top: 6px;
+    border-radius: 100%;
+    -ms-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+}
+.table-striped tbody tr:nth-of-type(odd){
+    background-color:#ffffff;
+}
+.table-striped tbody tr:nth-of-type(even){
+    background-color:#fff8f2;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px)  {
+    .page-content{
+        margin-bottom: 227px !important;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .well {
+        min-height: 390px;
+        width: 100%;
+    }
+
+    .single-option {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+}
+
+.flight .dropdown-menu {
+    margin-left: 0px;
+    min-width: inherit;
+}
+
+@media screen and (max-width: 768px) {
+    .single-option {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    span .right {
+        float: none;
+    }
+
+    /** {*/
+        /*-webkit-touch-callout: auto;*/
+        /*-webkit-user-select: auto;*/
+    /*}*/
+
+    textarea {
+        -webkit-user-select: auto;
+    }
+
+    .mp-b-15 {
+        padding-bottom: 15px;
+    }
+
+    .check-list .fa {
+        font-size: 25px !important;
+    }
+
+    .check-list input[type=checkbox] {
+        width: 25px;
+        height: 15px;
+    }
+
+    .well:nth-child(2), .well:nth-child(3) {
+        margin-left: 0 !important;
+    }
+
+    .content {
+        padding-left: 0;
+    }
+
+    .maxltravel {
+        padding-bottom: 15px;
+    }
+
+    .radio span {
+        font-size: small;
+        padding-left: 20px;
+    }
+
+    .radio {
+        padding-left: 5px;
+    }
+
+    .accomodation-date-from {
+        width: 101% !important;
+    }
+
+    .accomodation-date-to {
+        width: 101% !important;
+    }
+
+    .accommodationcontent, .cabcontent, .contentinfo {
+        padding-right: 0 !important;
+    }
+
+    .cabdir {
+        padding-left: 10% !important;
+    }
+
+    .customDimensionInput {
+        padding-left: 0 !important;
+    }
+}
+
+.no-pad-left {
+    padding-left: 0px;
+}
+
+.ac-check {
+
+}
+
+.target-fade {
+    transition: background-color 2s ease;
+    background-color: transparent !important;
+}
+
+.guest-list {
+    position: absolute;
+    z-index: 1;
+    width: 95%;
+}
+
+.badge-info {
+    background-color: #3a87ad;
+}
+
+.badge-warning {
+    background-color: #f89406;
+}
+
+.travel-section .input-group {
+    display: flex !important;
+}
+.fa-info-circle{ margin-top: 50%;}
+
+.well .fa {
+    vertical-align: middle;
+}
+.combobox-container{
+    width: 100%;
+}
+.combobox-container .input-group{
+    width: 100%;
+}
+.combobox-container .input-group .typeahead{
+    left: 90px !important;
+    width: 100%;
+
+}
+@media screen and (max-width: 768px) {
+    .accommodationcontent .input-group{
+        width: 89% !important;
+    }
+    .cabcontent .input-group{
+        width: 89% !important;
+    }
+    .combobox-container .input-group .typeahead{
+        left: 0px !important;
+    }
+}
+@media screen and (max-width: 450px) {
+    .accommodationcontent .input-group{
+        width: 89% !important;
+    }
+    .cabcontent .input-group{
+        width: 89% !important;
+    }
+}
+.dropdown-width-fix {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20fill%3D%22%23555555%22%20%0A%09%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%22-261%20145.2%2024%2024%22%20style%3D%22enable-background%3Anew%20-261%20145.2%2024%2024%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20d%3D%22M-245.3%2C156.1l-3.6-6.5l-3.7%2C6.5%20M-252.7%2C159l3.7%2C6.5l3.6-6.5%22%2F%3E%0A%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-position: right center;
+}
+.profile-button{
+    background-color: #fff;
+    border: 1px solid #ec5d25;
+    border-radius: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #000;
+    text-decoration: none;
+    margin-top: -4px;
+    cursor: pointer;
+}
+.profile-button:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #ec5d25;
+}
+.profile-button:active {
+    color: #000;
+    background-color: #fff;
+    border-color: #ec5d25;
+}
+.profile-button:focus {
+    color: #000;
+    background-color: #fff;
+    border-color: #ec5d25;
+}
+.close-bookforothers{
+    cursor:pointer;
+    margin-left:5px;
+}
+@media screen and (max-width: 767px) {
+    .profile-button{
+        width:20% !important;
+    }
+}
+
+
+/* travel card layout */
+.main-card-section{
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    box-shadow: none;
+}
+.main-card-inner-section{
+    padding-bottom:15px;
+    box-shadow: 0 1px 14px 0 rgba(207, 207, 207, 0.5);
+}
+.mode-section{
+    background-color: #fafafa;
+    border: 1px solid #fafafa;
+    padding: 10px;
+}
+/**/
+
+/* Create a custom checkbox start */
+.checkmark-travel {
+    border: 1px solid #cdcdcd;
+    position: absolute;
+    top: 0;
+    left:    0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container-travel input:checked ~ .checkmark-travel {
+    border: 1px solid #ec5d25;
+    background-color: #ec5d25;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark-travel:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container-travel input:checked ~ .checkmark-travel:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container-travel .checkmark-travel:after {
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.checkbox-container-travel:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #EC5D25;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.create-checkbox{
+    bottom: 10px;
+}
+.travel-name{
+    margin-left: 10px;
+}
+/* Create a custom checkbox end */
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #fff;
+    background-color: #ec5d25;
+}
+
+    .footer-new {
+   position:absolute;
+   width: 100%;
+   background-color:black;
+   color: white;
+   text-align: center;
+   padding:18px 0 0 0;
+}
+
+.hover-none {
+    color: white;
+    text-decoration: none;
+}
+
+.hover-none:hover {
+    color: white;
+    text-decoration: none;
+}
+#page-container {
+    position: relative;
+    min-height: 100vh;
+    background: #fff;
+    top: 5px;
+}
+#content-wrap {
+    padding-bottom: 1rem;    /* Footer height */
+}
+.travel-accommodation-mode-section{
+    padding: 10px 0 10px 5px;
+}
+.radio-button-margin-left{
+    margin-left: 15px;
+}
+
+/*text box start*/
+
+
+
+.input-underline-text {
+    text-align: center;
+    background-color: transparent;
+    border: none !important;
+    border-bottom: 1px solid #CCC !important;
+    color: #555;
+    box-sizing: border-box;
+    left: 50%;
+    margin: 20px 0 20px -100px;
+    padding: 10px 0;
+    position: relative;
+    top: 50%;
+    width: 200px;
+
+}
+
+
+.input-underline-text:focus+.underline {
+    transform: scale(1);
+}
+
+.underline-text {
+    /*background-color: dodgerblue;*/
+    display: inline-block;
+    height: 2px;
+    left: 50px;
+    margin-top: -4px;
+    position: absolute;
+    top: 185px;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    width: 202px;
+}
+.input-underline-text:focus{
+    outline-style: none;
+}
+.mode-travel{
+    font-size: 12px;
+    margin-top: 10px;
+}
+.travel-tab-nav{
+    width: 33%;
+    text-align: center;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #ec5d25;
+    background-color: #feede5;
+    border: 1px solid #ec5d25 !important;
+}
+.nav-tabs-new{
+    border: none;
+}
+.tab-link-new{
+    border: 1px solid #000000 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    color: #000000;
+}
+
+/*text box end*/
+.button-group {
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+@media screen and (max-width: 600px) {
+            .input-option{
+                flex-direction: column;
+            }
+        }
+
+        .error{
+            color: red;
+            font-size:15px;
+         
+
+        }
+</style>
+
+<div class="container py-5" id="traveller_details">
+      <h2 style="text-align:center;color: #ec5d25;">My Profile </h2><br>
+
+
+    <div class="row">
+       
+        <div class="col-md-10 mx-auto">
+            <form class="profile" action="#" method="post">
+              
+                   <div class="h_1" >
+
+<span style="color: #ec5d25;">Personal Details</span>
+</div> 
+             
+                
+                       
+                        <div class="card1  text-left" style="margin-top:10px;">
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="phone" class="homecd"></label>
+                            <input type="text" class="form-control" placeholder="First Name" id="first_name" pattern="[a-zA-Z ]+" required title="3 characters minimum" value="" name="first_name" placeholder="">
+                    </div>
+                    <div class="col-sm-6">
+                       <label for="phone" class="homecd"></label>
+                            <input type="text" class="form-control last-name-validation" placeholder="Last Name" id="last_name" pattern="[a-zA-Z ]+" required value="" name="last_name" placeholder="">
+                    </div>
+                    
+                </div>
+                      
+                     
+                        <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="phone" class="homecd"></label>
+                            <input type="email" class="form-control" placeholder="Emai ID" id="" pattern="[a-zA-Z ]+" required value="" name="email_id">
+                    </div>
+                    <div class="col-sm-6">
+                         <label for="phone" class="homecd"></label>
+                            <input type="tel" class="contact_number form-control" placeholder="Phone No" id="phone" value="" name="c_num" placeholder="">
+                         
+                    </div>
+                </div>
+               <div class="form-group row">
+                    <div class="col-sm-6">
+                         <label for="dob" class="homecd"></label>
+                            <input type="text" name="dob" class="dob form-control" title="Enter the DOB" id="dob" placeholder="Date of Birth" value="" >
+                    </div>
+                   
+                    <div class="col-sm-6">
+                         <label for="gender" class="homecd"></label>
+                            <select class="form-control" id="gender" name="gender" style="opacity: 0.75;">
+                                <option class="disabled hidden" value="NA">Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                    </div>
+                </div>
+               </div>
+                <!--   </div> -->
+                    <div class="h_1" style="margin-left:0rem;padding-top:10px">
+                <span style="color: #ec5d25;">Employee Details</span>
+              </div> 
+
+              <div class="card1" style="margin-top:10px;">
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                         <label for="e-id" class="homecd"></label>
+                            <input type="text" class="form-control" name="e-id" id="e-id" placeholder="Employee ID" value="">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="designation" class="homecd"></label>
+                            <input type="text" class="form-control" name="designation" id="designation" value="" placeholder="Designation">
+                    </div>
+                    
+                </div>
+             
+              </div>
+              
+            
+              
+            <div class="h_1" style="padding-top:10px;">
+
+<span style="color: #ec5d25;">Travel Information</span>
+
+</div> 
+              <div class="card1" style="margin-top:10px;">
+                <h3 style="font-size:16px;opacity:0.75;text-align:left;color: #ec5d25;">Passport Details</h3>
+                <div class="form-group row">
+
+                    <div class="col-sm-6">
+                       <label for="pno" class="homecd"></label>
+                            <input type="text" class="form-control" name="passport_number" id="pno" value="" placeholder=" Passport Number">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="ped" class="homecd"></label>
+                            <input type="text" name="ped" class="dob form-control" id="ped"  data-inputmask="'alias': 'date'" placeholder="Passport Expiry Date" value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputpassportissuedcountry" class="homecd"></label>
+                     
+                        <select class="form-control"  name="passport_country"  id="inputpassportissue"  placeholder="Passport Issued Country" style="opacity:70%;">
+                      <option class="disabled hidden" value="NA" >Passport Issued Country</option>
+                                <option value="0" >India</option>
+                                <option value="1" >America</option>
+                                <option value="2" >Australia</option>
+                                <option value="3" >US</option>
+                                <option value="4" >Italy</option>
+                                <option value="5" >france</option>
+                            </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="inputpassportissueddate" class="homecd"></label>
+                        <input type="text" class="dob form-control" name="issed_date" id="datepicker_date" placeholder="Passport Issued Date">
+                    </div>
+                  </div>
+                     <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputnationality" class="homecd"></label>
+                        <input type="text" class="form-control" name="nationality" id="inputnationality" placeholder="Nationality">
+                    </div>
+                </div>
+                <div style="font-size:14px;text-align:left;opacity:0.75;display:none;">SEAT AND MEAL PREFERENCE</div>
+                <div class="form-group row" style="display:none;">
+                    <div class="col-sm-6">
+                        <label for="flight_seat_prefernce" class="homecd"></label>
+                            <select class=" form-control" id="flight_seat_prefernce" name="flight_seat_prefernce" style="opacity: 0.75;">
+                                <option value="no-pref"> Flight Seat</option>
+                                <option value="no-pref">No-preference </option>
+                                <option value="window">Window</option>
+                                <option value="aisle">Aisle</option>
+                            </select>
+                    </div>
+                    <div class="col-sm-6">
+                       <label for="meal" class="homecd"></label>
+                            <select class=" form-control" id="meal" name="meal_prefernce"style="opacity: 0.75;">
+                                <option value="no-pref" >Meal</option>
+                                <option value="no-pref">No-preference </option>
+                                <option value="Veg">Veg</option>
+                                <option value="Non-veg">Non Veg</option>
+                            </select>
+
+                    </div>
+                </div>
+
+                
+                   
+
+              <main role="main" style="margin-bottom:20px;">
+<h3 style="font-size:16px;opacity:0.75;text-align:left;color: #ec5d25;">Upload Current Passport</h3>
+    
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          
+          <!-- Our markup, the important part here! -->
+       <div id="drag-and-drop-zone" class="dm-uploader p-5" style="background-color:#fafafa;" >
+            <h5 class="text-muted">Drag &amp; drop files here</h5>
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<form class="files" action="" method="post">
+            <div class="btn  btn-block">
+                <span style=color:#ec5d25>Browse</span>
+            <input type="file" class="form-control hidden image" name="image" id="images" placeholder="" accept=".png,.jpg,.jpeg,.pdf" title='Click to add Files' />
+            <input type="reset" class="file-upload hidden" name="" value="reset" style="display:none;">
+            </div>
+          </div><!-- /uploader -->
+
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="card h-100">
+            
+<div class="form-group">
+                            <label for="images">Please combine passport documents into 1 file and upload</label>
+                            <p>
+                               
+                            </p>
+                        </div>
+
+          
+          </div>
+        
+        </div>
+     
+    </main> 
+<main role="main" style="margin-bottom:20px;">
+<h3 style="font-size:16px;opacity:0.75;text-align:left;color: #ec5d25;">Upload Other Documents</h3>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12" >
+          
+          <!-- Our markup, the important part here! -->
+         <div class="dm-uploader p-5" style="background-color:#fafafa;">
+            <h5 class="text-muted">Drag &amp; drop files here</h5>
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<form class="files_v1" action="" method="post">
+            <div class="btn  btn-block">
+                <span style=color:#ec5d25>Browse</span>
+            <input type="file" class="form-control hidden image_v1" name="image_v1" id="images_v1" placeholder="" accept=".png,.jpg,.jpeg,.pdf" title='Click to add Files' /><input type="reset" class="file-upload_v1 hidden" name="" value="reset" style="display:none">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="card h-100">
+            <div class="form-group">
+                            <label for="images_v1">Documents to be uploaded Identity proof,old passport,Visa </label>
+                            <p>
+                            
+                            </p>
+                        </div>
+           
+          </div>
+          
+        </div>
+      </div>
+    </main>
+
+
+
+                <div class="col-lg-12 button-group">
+                    <center>
+                    
+                           <a href="#"></a><button type="button" class="btn btn-primary cancelClass" name="button" style="border-radius:4px;box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12);background-color:#ffffff;border:1px solid #ec5d25;font-family:test;font-weight:500;color:#ec5d25;margin-right:10px;">Cancel</button>&ensp;
+   
+                        <button type="submit" class="btn btn-primary" name="button" id="submitbtn" style="border-radius:4px;background-color:#ec5d25;color:#fff;font-family:test;font-weight:500;border: solid 1px #ec5d25">Submit</button>
+                    </center>
+                </div>
+            </form>
+
+          
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<style media="screen">
+    .hover-none {
+        color: white;
+        text-decoration: none;
+    }
+
+    .hover-none:hover {
+        color: white;
+        text-decoration: none;
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/0.5.0/sweet-alert.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+ $("#dob").datepicker({ 
+        autoclose: true, 
+        
+  }).datepicker();
+});
+$(document).ready(function(){
+$('#ped').datepicker({
+        format: 'dd-mm-yyyy',
+        startDate: '+90d',
+        
+    });
+});
+$(document).ready(function(){
+$('#datepicker_date').datepicker({
+        format: 'dd-mm-yyyy',
+        endDate: '+0d',
+    });
+});
+
+
+       $(document).ready(function(){
+        $(".contact_number").inputmask("9999999999", {placeholder: ""});
+        $(".dob").inputmask("99/99/9999", {placeholder: "DD/MM/YYYY"});
+        $(".profile").on("submit", function (e) {
+            var dateEntered = $("#ped").val();
+            var dateToCompare = new Date(dateEntered.substring(6, 10), dateEntered.substring(3, 5) - 1, dateEntered.substring(0, 2));
+            var currentDate = new Date();
+            var first_name = $("#first_name").val();
+            first_name = first_name.toLowerCase();
+            var last_name = $("#last_name").val();
+            last_name = last_name.toLowerCase();
+            var contact_no = $("#phone").val();
+            last_name_validation = false;
+
+            if(first_name.length == 0){
+                $("#first_name").css({"border-color":"red","box-shadow":"0 1px 7px 0 rgb(244, 98, 50)"});
+                $.gritter.add({
+                    title: 'First name '+ first_name +' is not valid.',
+                    time: 3500
+                });
+                $('html, body').animate({
+                    scrollTop: $("#traveller_details").offset().top
+                });
+                return false;
+            }else{
+                $("#first_name").css({"border-color":"","box-shadow":""});
+            }
+
+            if(last_name.length < 2){
+                $("#last_name").css({"border-color":"red","box-shadow":"0 1px 7px 0 rgb(244, 98, 50)"});
+                $.gritter.add({
+                    title: 'Last name '+ last_name +' is not valid.',
+                    time: 3500
+                });
+                $('html, body').animate({
+                    scrollTop: $("#traveller_details").offset().top
+                });
+                return false;
+            }else{
+                $("#last_name").css({"border-color":"","box-shadow":""});
+            }
+
+            $(".last-name-validation").each(function () {
+                if(salutation.includes(last_name)){
+                    $(this).css({"border-color":"red","box-shadow":"0 1px 7px 0 rgb(244, 98, 50)"});
+                    $.gritter.add({
+                        title: 'No salutations allowed in the last name.',
+                        time: 3500
+                    });
+                    $('html, body').animate({
+                        scrollTop: $("#traveller_details").offset().top
+                    });
+                    last_name_validation = true;
+                }else{
+                    $(this).css({"border-color":"","box-shadow":""});
+                }
+            });
+            if(last_name_validation){
+                return false;
+            }
+
+            if(contact_no.length < 10){
+                $("#phone").css({"border-color":"red","box-shadow":"0 1px 7px 0 rgb(244, 98, 50)"});
+                $.gritter.add({
+                    title: 'Contact number '+ contact_no +' is not valid.',
+                    time: 3500
+                });
+                $('html, body').animate({
+                    scrollTop: $("#traveller_details").offset().top
+                });
+                return false;
+            }else{
+                $("#phone").css({"border-color":"","box-shadow":""});
+            }
+
+           
+
+            
+            
+</script>
+
+<script>
+
+    $(".profile").validate({
+        rules: {
+            first_name: {
+                required: true,
+                minlength: 1
+            },
+            last_name: {
+                required: {
+                    depends: function () {
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    }
+                },
+                minlength: 2,
+                whiteSpaceValidate: {
+                    data: function () {
+                        return $(this).val();
+                    }
+                }
+
+            }
+        },
+        messages: {
+            first_name: {
+                required: "Please provide First name",
+                minlength: "Check First Name"
+            },
+            last_name: {
+                required: "Please provide Last name",
+                minlength: "Last name should be a minimum of 2 characters",
+                whiteSpaceValidate: "Please remove spaces"
+            }
+        },
+    });
+
+
+    jQuery.validator.addMethod("whiteSpaceValidate", function(value, element) {
+        var mask = new RegExp('^[A-Za-z]*$');
+        return this.optional( element ) || mask.test( value );
+    });
+
+    $(function () {
+        $('#first_name').keydown(function (e) {
+
+                var key = e.keyCode;
+                if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+                    e.preventDefault();
+                }
+
+        });
+    });
+
+    $(function () {
+        $('#last_name').keydown(function (e) {
+            var key = e.keyCode;
+            var k = event ? event.which : window.event.keyCode;
+            if (k == 32)
+            {
+                return false;}
+            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+                e.preventDefault();
+            }
+           
+        });
+    });
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</body>
+</html>
+
